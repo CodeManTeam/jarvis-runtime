@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jarvis</string>
+
+    <!-- Main screen -->
+    <string name="status_sensing_hours">24 小时感知中</string>
+    <string name="status_waiting_connection">等待连接</string>
+    <string name="status_connected">已连接</string>
+    <string name="status_disconnected">已断开</string>
+    <string name="status_testing_connection">测试连接</string>
+    <string name="header_status_listening">监听中</string>
+    <string name="header_status_recording">正在录音</string>
+    <string name="header_status_asr">发送 ASR</string>
+    <string name="header_status_processing">AI 处理中</string>
+    <string name="header_status_playing">播放回复</string>
+    <string name="header_status_completed">已完成</string>
+    <string name="header_status_error">处理失败</string>
+    <string name="header_status_offline">未连接</string>
+
+    <string name="card_server_title">远端服务器配置</string>
+    <string name="card_server_hint">查看连接状态与高级设置</string>
+    <string name="card_server_action">进入设置</string>
+
+    <string name="card_intervention_title">AI 介入</string>
+    <string name="card_intervention_hint_on">已开启 · 由你决定是否接受</string>
+    <string name="card_intervention_hint_off">已暂停后台感知</string>
+
+    <string name="perception_title">实时感知</string>
+    <string name="perception_asr_idle">ASR · 等待输入</string>
+    <string name="perception_asr_listening">ASR · 正在聆听</string>
+    <string name="perception_placeholder">等待你说话</string>
+    <string name="perception_listening">正在聆听……</string>
+    <string name="perception_state_listening">监听中</string>
+    <string name="perception_state_voice">检测到声音</string>
+    <string name="perception_state_asr">ASR · 识别中</string>
+    <string name="perception_state_processing">处理中</string>
+    <string name="perception_state_playing">播放中</string>
+    <string name="perception_state_error">处理失败</string>
+    <string name="perception_listening_idle">正在持续监听，等待你说话</string>
+    <string name="perception_voice_detected">检测到声音，正在整理语音片段</string>
+    <string name="perception_asr_processing">正在把语音发送给 ASR</string>
+    <string name="perception_processing">正在判断是否需要处理</string>
+    <string name="perception_playing">正在播放回复</string>
+    <string name="perception_error">语音处理失败</string>
+    <string name="perception_usage_loading">今日用量：读取中</string>
+    <string name="perception_usage_format">今日：ASR %1$s · Tokens %2$d / %3$d</string>
+    <string name="settings_tts">语音回复（TTS）</string>
+    <string name="settings_tts_on">已开启 · AI 回复会尝试播放语音</string>
+    <string name="settings_tts_off">已关闭 · 只保留文字回复，节省资源</string>
+    <string name="settings_tts_unavailable">已开启但不可用 · 系统语音引擎未就绪</string>
+    <string name="toast_tts_unavailable">TTS 不可用，已保留文字回复</string>
+
+    <string name="activity_section_title">AI 活动</string>
+    <string name="activity_section_today">今天</string>
+    <string name="activity_loading">正在读取活动</string>
+    <string name="activity_empty">暂无活动</string>
+    <string name="activity_empty_more">暂无更多活动</string>
+    <string name="activity_status_prefix">状态：</string>
+    <string name="activity_status_loading">读取中</string>
+    <string name="activity_status_processing">处理中</string>
+    <string name="activity_status_empty">暂无活动</string>
+    <string name="activity_waiting_event">等待新的事件</string>
+    <string name="activity_badge_ai_judgement">AI 判断</string>
+    <string name="activity_badge_ready">准备介入</string>
+    <string name="activity_now">现在</string>
+
+    <string name="action_accept">接受</string>
+    <string name="action_reject">暂不</string>
+    <string name="action_modify">修改</string>
+    <string name="action_delete">删除</string>
+    <string name="action_undo">撤销</string>
+    <string name="action_details">展开详情</string>
+
+    <string name="action_view_log">查看日志</string>
+
+    <!-- Status bar word list (WATCH_UI.md §总则·2, 严格三选一+等待连接) -->
+    <string name="statusword_online_idle">在线 · 感知中</string>
+    <string name="statusword_online_waiting">在线 · 感知中 · %1$d 项待许可</string>
+    <string name="statusword_offline">离线 · 感知暂停</string>
+    <string name="statusword_unconfigured">等待连接</string>
+
+    <!-- Attention stream (WATCH_UI.md §2, DESIGN_SYSTEM_V2.md §6.2) -->
+    <string name="attention_pill_high_risk">高风险 · 等你</string>
+    <string name="attention_pill_suggest">建议 · 确认一次</string>
+    <string name="attention_pill_auto">自动 · 已处理</string>
+    <string name="attention_pill_ignored">已忽略 · AI 已知情</string>
+    <string name="attention_why">为什么 ›</string>
+    <string name="attention_action_review">审阅并许可 →</string>
+    <string name="attention_action_suggest">查看建议 →</string>
+    <string name="attention_action_ignored">查看留痕 →</string>
+    <string name="attention_action_undo">低风险 · 撤销</string>
+    <string name="attention_empty">暂无需要你关注的事</string>
+    <string name="attention_more_suffix">上滑看更多（还有 %1$d 条）</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">设置</string>
+    <string name="theme_title">外观模式</string>
+    <string name="theme_system">跟随系统</string>
+    <string name="theme_light">浅色</string>
+    <string name="theme_dark">深色</string>
+    <string name="settings_breadcrumb">/ 设置</string>
+    <string name="settings_back">返回</string>
+    <string name="settings_section_server">远端服务器配置</string>
+    <string name="settings_server_address_label">服务地址</string>
+    <string name="settings_server_address_hint">https://api.example.com</string>
+    <string name="settings_token_label">认证密钥（API Key）</string>
+    <string name="settings_token_hint">设备 Token</string>
+    <string name="settings_sample_hint">示例地址与密钥 · 未保存，尚未测试连接</string>
+    <string name="settings_test_connection">测试连接</string>
+    <string name="settings_save_connection">保存配置</string>
+    <string name="settings_save_and_connect">保存并连接</string>
+    <string name="settings_scan_qr">扫码配置</string>
+    <string name="settings_device_id_prefix">设备 ID：</string>
+    <string name="settings_connection_summary">连接状态由顶部状态头显示</string>
+    <string name="settings_connection_unconfigured">未配置</string>
+
+    <string name="settings_section_sensing">感知与通知</string>
+    <string name="settings_section_runtime">运行控制</string>
+    <string name="settings_voice_profile_title">语音灵敏度</string>
+    <string name="settings_voice_profile_hint">自动跟随环境；这里只是微调，听不清时调灵敏</string>
+    <string name="settings_voice_profile_sensitive">更灵敏</string>
+    <string name="settings_voice_profile_standard">标准</string>
+    <string name="settings_voice_profile_conservative">更保守</string>
+    <string name="settings_section_permissions">系统权限</string>
+    <string name="settings_asr_language">语音识别语言</string>
+    <string name="settings_asr_language_value">中文（简体）</string>
+    <string name="settings_background_sensing">后台感知</string>
+    <string name="settings_background_sensing_on">已开启 · 允许后台持续识别</string>
+    <string name="settings_background_sensing_off">已暂停后台识别</string>
+    <string name="settings_notification_permission">通知权限</string>
+    <string name="settings_notification_granted">已授权</string>
+    <string name="settings_notification_denied">未授权 · 待办与介入提醒</string>
+    <string name="settings_notification_action">去开启</string>
+
+    <string name="settings_microphone_permission">麦克风</string>
+    <string name="settings_location_calendar_permission">位置/日历</string>
+    <string name="settings_location_sensing">后台位置感知</string>
+    <string name="settings_location_sensing_on">已开启 · 位置变化会发送给中控</string>
+    <string name="settings_location_sensing_off">已关闭 · 不自动发送 GPS，节省 Tokens</string>
+
+    <!-- Notification permission dialog -->
+    <string name="notif_dialog_title">通知权限</string>
+    <string name="notif_dialog_message">开启后，Jarvis 可在后台提醒你待办、打断与 AI 活动。</string>
+    <string name="notif_dialog_confirm">开启通知</string>
+    <string name="notif_dialog_dismiss">暂不</string>
+
+    <!-- Log screen -->
+    <string name="log_title">活动日志</string>
+    <string name="log_refresh">刷新</string>
+    <string name="log_loading">正在读取</string>
+    <string name="log_load_failed">读取失败，可重试</string>
+    <string name="log_parse_failed">活动数据无法识别</string>
+    <string name="log_need_config">请先配置服务器并连接</string>
+    <string name="log_load_more">加载更多</string>
+    <string name="log_count_suffix"> 条活动</string>
+
+    <!-- Activity detail dialog -->
+    <string name="detail_status_prefix">状态：</string>
+    <string name="detail_source_prefix">来源：</string>
+    <string name="detail_reason_prefix">判断：</string>
+    <string name="detail_reply_prefix">结果：</string>
+    <string name="detail_history_prefix">工具与流程：</string>
+    <string name="detail_actions_prefix">可用操作：</string>
+    <string name="detail_event_id_prefix">活动 ID：</string>
+    <string name="detail_default_title">活动详情</string>
+    <string name="detail_close">关闭</string>
+    <string name="detail_unknown_source">未知</string>
+
+    <!-- Dialogs & toasts shared -->
+    <string name="dialog_cancel">暂不</string>
+    <string name="dialog_save">保存</string>
+    <string name="modify_dialog_title">修改活动</string>
+    <string name="modify_dialog_hint">修改活动内容</string>
+
+    <string name="toast_server_invalid">服务器地址无效</string>
+    <string name="toast_token_empty">设备 Token 不能为空</string>
+    <string name="toast_config_saved">配置已保存</string>
+    <string name="toast_connect_failed">连接失败，请检查地址</string>
+    <string name="toast_service_available">服务可用</string>
+    <string name="toast_activity_missing_id">活动缺少 ID，无法操作</string>
+    <string name="toast_content_empty">内容不能为空</string>
+    <string name="toast_action_invalid">操作参数无效</string>
+    <string name="toast_action_not_delivered">操作未送达，请重试</string>
+    <string name="toast_action_not_completed">操作未完成，请重试</string>
+    <string name="toast_action_response_invalid">返回数据无法识别，请重试</string>
+    <string name="toast_action_updated">已更新原活动状态</string>
+    <string name="toast_activities_unavailable">活动暂时无法读取</string>
+    <string name="toast_activities_failed">活动读取失败</string>
+    <string name="toast_activities_format_invalid">活动数据格式无法识别</string>
+    <string name="toast_qr_cancelled">已取消扫码</string>
+    <string name="toast_qr_unavailable">扫码功能暂不可用</string>
+    <string name="toast_qr_config_loaded">配置已读取，正在测试连接</string>
+    <string name="toast_permission_mic_granted">麦克风权限已开启</string>
+    <string name="toast_permission_mic_denied">需要麦克风权限才能使用语音</string>
+    <string name="toast_permission_updated_prefix">权限状态已更新：</string>
+
+    <string name="permission_dialog_mic_title">开启麦克风</string>
+    <string name="permission_dialog_mic_message">开启后台感知后，设备会持续在本地检测声音；只有检测到连续语音片段时，才会发送音频到 Jarvis 中控进行识别。</string>
+    <string name="permission_dialog_optional_title">开启位置和日历</string>
+    <string name="permission_dialog_optional_message">位置用于生成位置事件，日历用于同步未来日程。Jarvis 只在后台读取并发送给你的中控。</string>
+    <string name="permission_dialog_open_settings">打开系统设置</string>
+    <string name="permission_dialog_continue">继续授权</string>
+    <string name="permission_optional_already_on">位置和日历权限已开启</string>
+
+    <!-- Evidence screen (WATCH_UI.md §3, ACTIVITY_EVIDENCE.md §4) -->
+    <string name="evidence_status_word">只展示可核查依据</string>
+    <string name="evidence_title">为什么这样做</string>
+    <string name="evidence_loading">正在读取</string>
+    <string name="evidence_load_failed">读取失败，可重试</string>
+    <string name="evidence_need_config">请先配置服务器并连接</string>
+    <string name="evidence_missing_id">缺少活动 ID，无法查看依据</string>
+    <string name="evidence_layer_01">01 结论</string>
+    <string name="evidence_layer_02">02 判断与依据</string>
+    <string name="evidence_layer_03">03 引用</string>
+    <string name="evidence_layer_04">04 原始输入与门控</string>
+    <string name="evidence_raw_expand">展开</string>
+    <string name="evidence_raw_collapse">折叠</string>
+    <string name="evidence_confidence_missing">置信度 未提供</string>
+    <string name="evidence_confidence_format">置信度 %1$d%% · %2$s</string>
+    <string name="evidence_ref_cleared">· 资料已清理</string>
+    <string name="evidence_ref_memory_prefix">记忆 </string>
+    <string name="evidence_ref_event_prefix">事件 </string>
+    <string name="evidence_ref_tool_prefix">工具 </string>
+    <string name="evidence_footer_format">记忆 %1$d · 工具 %2$d / 非内部思维过程</string>
+    <string name="evidence_risk_high">高风险</string>
+    <string name="evidence_risk_medium">中风险</string>
+    <string name="evidence_risk_low">低风险</string>
+    <string name="evidence_raw_item_format">%1$s · 点按查看</string>
+
+    <!-- Permission screen (WATCH_UI.md §4, PERMISSION_MODEL.md) -->
+    <string name="permission_status_word">未发送 · 每次确认</string>
+    <string name="permission_title">外发前，需要你许可</string>
+    <string name="permission_pill_label">● 高风险 / 外发消息</string>
+    <string name="permission_loading">正在读取</string>
+    <string name="permission_load_failed">读取失败，可重试</string>
+    <string name="permission_not_found">该许可已不存在或已处理</string>
+    <string name="permission_need_config">请先配置服务器并连接</string>
+    <string name="permission_missing_id">缺少待许可 ID，无法操作</string>
+    <string name="permission_draft_to_prefix">对象：</string>
+    <string name="permission_draft_attachments_prefix">附件：</string>
+    <string name="permission_irreversible_notice">确认后将外发。送达后无法保证撤回；只能追加更正，并记录补偿操作。</string>
+    <string name="permission_evidence_format">置信度 %1$s · 记忆 %2$d · 工具 %3$d</string>
+    <string name="permission_cancel">取消待发</string>
+    <string name="permission_confirm">确认发送一次</string>
+    <string name="permission_footer">许可仅用于本条消息 · 不授予长期权限</string>
+    <string name="toast_permission_confirmed">已确认发送</string>
+    <string name="toast_permission_rejected">已取消待发</string>
+    <string name="toast_permission_not_delivered">操作未送达，请重试</string>
+    <string name="toast_permission_not_completed">操作未完成，请重试</string>
+
+    <!-- Shared fallbacks: a missing value must read as unknown, never as zero -->
+    <string name="status_unavailable">—</string>
+    <string name="evidence_raw_empty">没有可核对的门控记录</string>
+
+    <!-- M2c: home status card, mutually exclusive priority
+         low-battery dim > offline > degraded (WATCH_UI.md §7/8/9) -->
+    <string name="statusword_low_battery">感知已关闭</string>
+    <string name="statusword_degraded">异常 · 外发仍待许可</string>
+
+    <string name="lowbatt_headline">%1$d%% 需要充电</string>
+    <string name="lowbatt_claim">持续感知已关闭。需要时，再叫我。</string>
+    <string name="lowbatt_notice">极暗模式 · 夜间不主动亮屏 语音仅按住时启用，文本仍可用。高风险许可不因省电而跳过。</string>
+    <string name="lowbatt_action_voice">长按语音</string>
+    <string name="lowbatt_action_text">文本输入</string>
+
+    <string name="offline_title">连接已断开</string>
+    <string name="offline_claim">已缓存，没有离线执行。</string>
+    <string name="offline_queue_format">待补传 %1$s 条 · 提示已保留</string>
+    <string name="offline_queue_not_wired">队列未接入</string>
+    <string name="offline_notice">恢复后按事件 ID 去重补传。外发任务仍待许可，不会重放发送。</string>
+    <string name="offline_action_check_network">检查网络</string>
+    <string name="offline_action_view_cache">查看缓存</string>
+
+    <string name="degraded_title">服务没有完成</string>
+    <string name="degraded_claim">这次没有完成。请重试或改用文本。</string>
+    <string name="degraded_stage_format">%1$s：%2$s → %3$s（%4$s）</string>
+    <string name="degraded_more_suffix">还有 %1$d 项</string>
+    <string name="degraded_notice">完整错误与处理方式已记入中控。不会把失败标记为完成。</string>
+
+    <!-- M2e: habit suggestion screen (WATCH_UI.md §6) -->
+    <string name="suggestion_status_word">建议 · 尚未应用</string>
+    <string name="suggestion_title">一个小建议</string>
+    <string name="suggestion_pill_label">● 确认一次 / 不自动固化</string>
+    <string name="suggestion_loading">正在读取</string>
+    <string name="suggestion_load_failed">读取失败，可重试</string>
+    <string name="suggestion_need_config">请先配置服务器并连接</string>
+    <string name="suggestion_empty">当前没有待确认的建议</string>
+    <string name="suggestion_evidence_format">置信度 %1$d%% · 记忆 — · 工具 — · 为什么 ›</string>
+    <string name="suggestion_evidence_missing">置信度 未提供 · 记忆 — · 工具 — · 为什么 ›</string>
+    <string name="suggestion_boundary_notice">仅调整今天，不写成长期习惯。长期规则仍需你另行确认。</string>
+    <string name="suggestion_ignore">忽略并留痕</string>
+    <string name="suggestion_apply_today">仅今天应用</string>
+    <string name="suggestion_footer">未确认前，不会改变现有提醒</string>
+    <string name="suggestion_more_suffix">还有 %1$d 条建议</string>
+    <string name="toast_suggestion_applied_today">已仅对今天生效</string>
+    <string name="toast_suggestion_ignored">已忽略并留痕</string>
+    <string name="toast_suggestion_not_delivered">操作未送达，请重试</string>
+    <string name="attention_pill_suggest_entry">建议 · 确认一次</string>
+
+    <!-- M2d: voice input full-screen overlay (WATCH_UI.md §5) -->
+    <string name="voice_close">关闭</string>
+    <string name="voice_title">触摸长按说话</string>
+    <string name="voice_status_listening">正在听 · 仅按住时</string>
+    <string name="voice_transcript_placeholder">等待你说话</string>
+    <string name="voice_hint">流式转录 · 松开后提交 · 滑出取消</string>
+    <string name="voice_stage_listening">正在听</string>
+    <string name="voice_stage_asr">判断中</string>
+    <string name="voice_stage_processing">执行中</string>
+    <string name="voice_stage_done">完成</string>
+    <string name="voice_stage_failed">失败</string>
+    <string name="voice_response_processing">已收到 · 处理中 %1$ds</string>
+    <string name="voice_response_slow">还在处理（已 %1$d 秒），可以先放下</string>
+    <string name="voice_response_result">%1$s…</string>
+    <string name="voice_response_failed">没成功 · %1$s</string>
+    <string name="voice_retry">重试</string>
+    <string name="voice_permission_pending">有 1 件事等你许可</string>
+    <string name="voice_stage_arrow">→</string>
+    <string name="attention_footer_format">上滑看更多 · 最近同步 %1$s</string>
+    <string name="voice_replay">重看</string>
+    <string name="voice_speak">朗读</string>
+    <string name="voice_timeline_format">%1$d 段 · 共 %2$.1f 秒</string>
+    <string name="idle_details_open">抬腕详情 · 已展开　收起 ↑</string>
+    <string name="idle_details_closed">抬腕详情 · 已收起　展开 ↓</string>
+    <string name="idle_network_unknown">网络 未知</string>
+    <string name="idle_network_none">网络 未连接</string>
+    <string name="idle_network_wifi">Wi-Fi 已连接</string>
+    <string name="idle_network_cellular">蜂窝可用</string>
+    <string name="idle_battery_format">电量 %1$d%%</string>
+    <string name="idle_battery_unknown">电量 —</string>
+    <string name="idle_radio_none">蓝牙未检测</string>
+    <string name="idle_radio_off">蓝牙关闭</string>
+    <string name="idle_radio_ready">蓝牙待命 · 蜂窝可用</string>
+    <string name="idle_sync_never">尚未同步</string>
+    <string name="idle_sync_format">同步 %1$s</string>
+    <string name="idle_perception_note">感知：通知摘要 · 手动语音　默认不播报，仅异常时亮屏</string>
+    <string name="voice_grace_format">即将提交 %1$d 秒（继续说话会接上）</string>
+    <string name="voice_disclaimer">外发会转为「等待许可」，不会直接发送。首响应目标 ≤ 5 秒，非实测结果。</string>
+    <string name="voice_action_hold">按住说话</string>
+    <string name="voice_action_text">改用文本</string>
+    <string name="voice_footer">屏上触摸操作 · 扬声器默认静音</string>
+    <string name="server_config_notice">还没连接服务器 · 点这里去设置</string>
+    <string name="voice_failure_unknown">原因未知</string>
+    <string name="voice_failure_activity_format">失败 · %1$s</string>
+</resources>

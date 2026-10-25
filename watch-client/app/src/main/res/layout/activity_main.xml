@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<ScrollView
+    android:id="@+id/root_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/color_background">
+
+    <LinearLayout
+        android:id="@+id/root_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/space_page_h"
+        android:paddingEnd="@dimen/space_page_h"
+        android:paddingTop="@dimen/space_page_top"
+        android:paddingBottom="@dimen/space_page_bottom">
+
+        <!-- Status bar: left=time, center=state word, right=battery (WATCH_UI.md §总则·2) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/statusbar_height"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/status_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:41"
+                android:textSize="@dimen/text_md"
+                android:fontFamily="monospace"
+                android:textColor="@color/color_text_primary" />
+
+            <TextView
+                android:id="@+id/header_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/statusword_unconfigured"
+                android:textSize="@dimen/text_sm"
+                android:textColor="@color/color_text_tertiary"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+            <View
+                android:id="@+id/attention_dot"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/dot_attention"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/status_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="68%"
+                android:textSize="@dimen/text_sm"
+                android:textColor="@color/color_text_tertiary" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/server_config_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="28dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/server_config_notice"
+            android:textSize="@dimen/text_xs"
+            android:textColor="@color/color_warning_text"
+            android:background="@drawable/bg_pill_warning"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Idle block (WATCH_UI.md §1): big clock, date. The attention stream
+             is the second screen in the sketch; here it follows on the same scroll. -->
+        <TextView
+            android:id="@+id/idle_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            android:fontFamily="monospace"
+            android:text="09:41"
+            android:textColor="@color/color_text_primary"
+            android:textSize="62sp" />
+
+        <TextView
+            android:id="@+id/idle_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/text_sm" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/divider_line" />
+
+        <!-- 抬腕详情 (WATCH_UI.md §1): secondary facts, collapsible. -->
+        <TextView
+            android:id="@+id/idle_details_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/text_sm"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <LinearLayout
+            android:id="@+id/idle_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/idle_network"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/text_sm" />
+
+                <TextView
+                    android:id="@+id/idle_battery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="@dimen/text_sm" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/idle_radio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="@dimen/text_xs" />
+
+                <TextView
+                    android:id="@+id/idle_sync"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="@dimen/text_xs" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/idle_perception_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/idle_perception_note"
+                android:textColor="@color/color_text_tertiary"
+                android:textSize="@dimen/text_xs" />
+        </LinearLayout>
+
+        <!-- Real-time perception, compressed to two lines -->
+        <LinearLayout
+            android:id="@+id/perception_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/perception_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/perception_title"
+                    android:textSize="@dimen/text_xs"
+                    android:textColor="@color/color_text_secondary" />
+
+                <com.jarvis.watch.SoundWaveView
+                    android:id="@+id/sound_wave"
+                    android:layout_width="22dp"
+                    android:layout_height="14dp"
+                    android:layout_marginEnd="6dp" />
+
+                <TextView
+                    android:id="@+id/asr_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/perception_asr_idle"
+                    android:textSize="@dimen/text_2xs"
+                    android:textColor="@color/color_text_secondary" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/perception_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/perception_placeholder"
+                android:textSize="@dimen/text_sm"
+                android:textColor="@color/color_text_primary"
+                android:maxLines="2"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/divider_line" />
+
+        <!-- Mutually-exclusive priority status card: low battery dim > offline > degraded
+             (M2c). Built in Java so it shares AttentionCard-style primitives; hidden/empty
+             when the normal attention stream is shown instead. -->
+        <LinearLayout
+            android:id="@+id/status_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp"
+            android:visibility="gone" />
+
+        <!-- Attention stream (WATCH_UI.md §2) -->
+        <LinearLayout
+            android:id="@+id/attention_stream"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/attention_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textColor="@color/color_text_tertiary"
+            android:textSize="@dimen/text_2xs"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/view_log_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_view_log"
+            android:textSize="@dimen/text_label"
+            android:textColor="@color/color_text_primary"
+            android:drawableStart="@drawable/ic_log_clock"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical|start"
+            android:minHeight="36dp"
+            android:layout_marginTop="12dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Settings entry + AI intervention toggle moved off the attention stream -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/server_card_action"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/card_server_action"
+                android:textSize="@dimen/text_xs"
+                android:textColor="@color/color_text_tertiary"
+                android:gravity="start|center_vertical"
+                android:minHeight="32dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/intervention_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/card_intervention_hint_on"
+                android:textSize="@dimen/text_2xs"
+                android:textColor="@color/color_text_tertiary" />
+
+            <ToggleButton
+                android:id="@+id/intervention_toggle"
+                android:layout_width="44dp"
+                android:layout_height="26dp"
+                android:textOn="开"
+                android:textOff="关"
+                android:textSize="@dimen/text_2xs"
+                android:textColor="@color/color_text_on_accent"
+                android:background="@drawable/bg_pill_accent" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+
+    <!-- M2d voice input full-screen overlay (WATCH_UI.md §5). Lives here, not a new
+         Activity, so it can share MainActivity's socket/recorder and show real
+         speech_partial text instead of a fake upload-only flow. -->
+    <LinearLayout
+        android:id="@+id/voice_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/color_background"
+        android:paddingStart="@dimen/space_page_h"
+        android:paddingEnd="@dimen/space_page_h"
+        android:paddingTop="@dimen/space_page_top"
+        android:paddingBottom="@dimen/space_page_bottom"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/statusbar_height"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/voice_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/voice_close"
+                android:textSize="@dimen/text_sm"
+                android:textColor="@color/color_text_tertiary"
+                android:clickable="true"
+                android:focusable="true"
+                android:minWidth="48dp"
+                android:minHeight="32dp"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/voice_clock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="09:41"
+                android:textSize="@dimen/text_md"
+                android:fontFamily="monospace"
+                android:textColor="@color/color_text_primary" />
+
+            <TextView
+                android:id="@+id/voice_header_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/voice_status_listening"
+                android:textSize="@dimen/text_sm"
+                android:textColor="@color/color_text_secondary" />
+
+            <TextView
+                android:id="@+id/voice_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="68%"
+                android:textSize="@dimen/text_sm"
+                android:textColor="@color/color_text_tertiary" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_section"
+            android:text="@string/voice_title"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
+            android:textColor="@color/color_text_primary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_section">
+
+            <com.jarvis.watch.SoundWaveView
+                android:id="@+id/voice_sound_wave"
+                android:layout_width="120dp"
+                android:layout_height="40dp" />
+
+            <!-- 文本优先：转写常驻，不靠语音即时播报 -->
+            <TextView
+                android:id="@+id/voice_transcript"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_small"
+                android:gravity="center"
+                android:text="@string/voice_transcript_placeholder"
+                android:textSize="@dimen/text_sm"
+                android:textColor="@color/color_text_primary"
+                android:maxLines="4"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/voice_timeline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:textSize="@dimen/text_2xs"
+                android:textColor="@color/color_text_tertiary"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/voice_response_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:textSize="@dimen/text_xs"
+                android:textColor="@color/color_text_secondary"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/voice_permission_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:minHeight="36dp"
+                android:text="@string/voice_permission_pending"
+                android:textSize="@dimen/text_xs"
+                android:textColor="@color/color_warning_text"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/voice_retry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:background="@drawable/bg_pill_muted"
+                android:text="@string/voice_retry"
+                android:textSize="@dimen/text_xs"
+                android:textColor="@color/color_text_primary"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_small"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/voice_replay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:background="@drawable/bg_pill_muted"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/voice_replay"
+                    android:textSize="@dimen/text_2xs"
+                    android:textColor="@color/color_text_secondary"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/voice_speak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:background="@drawable/bg_pill_muted"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/voice_speak"
+                    android:textSize="@dimen/text_2xs"
+                    android:textColor="@color/color_text_secondary"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_small"
+            android:gravity="center"
+            android:text="@string/voice_hint"
+            android:textSize="@dimen/text_xs"
+            android:textColor="@color/color_text_tertiary" />
+        <TextView
+            android:id="@+id/voice_grace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textSize="@dimen/text_xs"
+            android:textColor="@color/color_warning_text"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/voice_current_stage"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/space_section"
+            android:text="@string/voice_stage_listening"
+            android:textSize="@dimen/text_xs"
+            android:textColor="@color/color_text_primary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_small"
+            android:text="@string/voice_disclaimer"
+            android:textSize="@dimen/text_2xs"
+            android:textColor="@color/color_text_tertiary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/space_section">
+
+            <TextView
+                android:id="@+id/voice_hold_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
+                android:minWidth="96dp"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/voice_action_hold"
+                android:textSize="@dimen/text_label"
+                android:textColor="@color/color_text_on_accent"
+                android:background="@drawable/bg_pill_accent"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/voice_use_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:minHeight="36dp"
+                android:minWidth="96dp"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/voice_action_text"
+                android:textSize="@dimen/text_label"
+                android:textColor="@color/color_text_primary"
+                android:background="@drawable/bg_pill_outline"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_small"
+            android:gravity="center"
+            android:text="@string/voice_footer"
+            android:textSize="@dimen/text_2xs"
+            android:textColor="@color/color_text_tertiary" />
+    </LinearLayout>
+
+</FrameLayout>

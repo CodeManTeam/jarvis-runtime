@@ -1,0 +1,45 @@
+/* Design tokens — Jarvis Console v2 (dark cockpit)
+   Source of truth: docs/design/NewJarvis/DESIGN_SYSTEM_V2.md §2-4
+   Do not add gradients, shadows, or pure black (#000). */
+:root {
+  /* 2.1 structural colors */
+  --bg-base: #0B0E11;
+  --bg-deep: #0D1115;
+  --surface: #11161B;
+  --surface-raised: #181E24;
+  --line: #2B333B;
+  --line-strong: #242A30;
+
+  /* 2.2 text colors */
+  --text: #EDF0F2;
+  --text-secondary: #B2BBC3;
+  --text-muted: #78848F;
+  --text-faint: #96A0AA;
+
+  /* 2.3 semantic colors (fg / bg) — the only four states */
+  --danger-fg: #EE9692;
+  --danger-bg: #301E20;
+  --warn-fg: #E3C17B;
+  --warn-bg: #2C261A;
+  --ok-fg: #83C7A3;
+  --ok-bg: #14271F;
+
+  /* 3.1 type scale (console) */
+  --text-2xs: 10px;
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-md: 13px;
+  --text-lg: 17px;
+  --text-xl: 21px;
+  --text-2xl: 29px;
+  --display: 34px;
+
+  --font-sans: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "IBM Plex Mono", "Consolas", monospace;
+
+  /* 4. radius */
+  --radius-sm: 6px;
+  --radius-lg: 12px;
+  --radius-bar: 2px;
+  --radius-pill: 40px;
+}

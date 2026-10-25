@@ -1,0 +1,16 @@
+[Unit]
+Description=Jarvis API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/jarvis
+EnvironmentFile=/opt/jarvis/.env
+ExecStart=/opt/jarvis/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8787
+Restart=always
+RestartSec=5
+User=jarvis
+
+[Install]
+WantedBy=multi-user.target
+

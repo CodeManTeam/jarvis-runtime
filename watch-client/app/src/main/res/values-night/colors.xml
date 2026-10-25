@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- v1.0 is dark-only; night theme shares the same cockpit tokens as values/colors.xml -->
+    <color name="color_background">#0B0E11</color>
+    <color name="color_bg_deep">#0D1115</color>
+    <color name="color_surface">#11161B</color>
+    <color name="color_surface_raised">#181E24</color>
+    <color name="color_border">#2B333B</color>
+    <color name="color_border_strong">#242A30</color>
+
+    <color name="color_text_primary">#EDF0F2</color>
+    <color name="color_text_secondary">#B2BBC3</color>
+    <color name="color_text_tertiary">#78848F</color>
+    <color name="color_text_faint">#96A0AA</color>
+    <color name="color_text_on_accent">#0B0E11</color>
+
+    <color name="color_accent">#83C7A3</color>
+    <color name="color_accent_soft">#14271F</color>
+    <color name="color_muted">#2B333B</color>
+    <color name="color_muted_dark">#EDF0F2</color>
+
+    <color name="color_success_bg">#14271F</color>
+    <color name="color_success_border">#416A52</color>
+    <color name="color_success_text">#83C7A3</color>
+
+    <color name="color_warning_bg">#2C261A</color>
+    <color name="color_warning_border">#6A5A3C</color>
+    <color name="color_warning_text">#E3C17B</color>
+
+    <color name="color_error_bg">#301E20</color>
+    <color name="color_error_border">#7A4853</color>
+    <color name="color_error_text">#EE9692</color>
+
+    <color name="color_overlay_scrim">#AA090C12</color>
+</resources>

@@ -1,0 +1,11 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+httpx==0.28.1
+python-dotenv==1.0.1
+python-multipart==0.0.20
+edge-tts==7.2.7
+websockets==17.0.1
+python-pptx==1.0.2
+reportlab==4.5.0
+pypdf==6.21.2
+python-docx==1.2.0

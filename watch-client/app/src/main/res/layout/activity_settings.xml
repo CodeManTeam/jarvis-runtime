@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/color_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/space_page_h"
+        android:paddingEnd="@dimen/space_page_h"
+        android:paddingTop="@dimen/space_page_top"
+        android:paddingBottom="@dimen/space_page_bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/settings_title"
+                android:textColor="@color/color_text_primary"
+                android:textSize="@dimen/text_title" />
+            <TextView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_chevron_left"
+                android:drawablePadding="4dp"
+                android:focusable="true"
+                android:text="@string/settings_back"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="@dimen/text_caption" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/theme_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/theme_title"
+                android:textColor="@color/color_text_primary"
+                android:textSize="@dimen/text_label" />
+            <TextView
+                android:id="@+id/theme_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_accent"
+                android:textSize="@dimen/text_caption" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/voice_profile_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_voice_profile_title"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/text_label" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_voice_profile_hint"
+                    android:textColor="@color/color_text_tertiary"
+                    android:textSize="@dimen/text_meta" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/voice_profile_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_accent"
+                android:textSize="@dimen/text_caption" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/settings_section_server"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/text_section_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_server_address_label"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="@dimen/text_caption" />
+            <EditText
+                android:id="@+id/server_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input"
+                android:hint="@string/settings_server_address_hint"
+                android:inputType="textUri"
+                android:maxLines="1"
+                android:padding="9dp"
+                android:textColor="@color/color_text_primary"
+                android:textColorHint="@color/color_text_tertiary"
+                android:textSize="@dimen/text_label" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/settings_token_label"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="@dimen/text_caption" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp">
+                <EditText
+                    android:id="@+id/token_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/settings_token_hint"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp"
+                    android:textColor="@color/color_text_primary"
+                    android:textColorHint="@color/color_text_tertiary"
+                    android:textSize="@dimen/text_label" />
+                <ImageView
+                    android:id="@+id/token_visibility_toggle"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/settings_token_label"
+                    android:focusable="true"
+                    android:src="@drawable/ic_eye_off" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/connection_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/settings_sample_hint"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="@dimen/text_meta" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/test_connection_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill_outline"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/settings_test_connection"
+                    android:textColor="@color/color_accent"
+                    android:textSize="@dimen/text_caption" />
+                <TextView
+                    android:id="@+id/save_config_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill_accent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/settings_save_connection"
+                    android:textColor="@color/color_text_on_accent"
+                    android:textSize="@dimen/text_caption" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/scan_qr_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_pill_outline"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/settings_scan_qr"
+                android:textColor="@color/color_text_primary"
+                android:textSize="@dimen/text_caption" />
+            <TextView
+                android:id="@+id/device_id_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="@string/settings_device_id_prefix"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="@dimen/text_meta" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/settings_section_runtime"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/text_section_title" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+            <include layout="@layout/settings_toggle_row_sensing" />
+            <include layout="@layout/settings_toggle_row_tts" />
+            <include layout="@layout/settings_toggle_row_location" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/settings_section_permissions"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/text_section_title" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_notification_permission"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/text_label" />
+                    <TextView
+                        android:id="@+id/notification_permission_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/text_meta" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/notification_permission_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_pill_outline"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:text="@string/settings_notification_action"
+                    android:textColor="@color/color_accent"
+                    android:textSize="@dimen/text_caption" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/microphone_permission_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill_outline"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/settings_microphone_permission"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/text_meta" />
+                <TextView
+                    android:id="@+id/optional_permission_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill_outline"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/settings_location_calendar_permission"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/text_meta" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/permission_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="@dimen/text_meta" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

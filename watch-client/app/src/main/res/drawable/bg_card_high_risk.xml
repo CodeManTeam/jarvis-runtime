@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/color_error_bg" />
+    <corners android:radius="@dimen/attention_card_radius" />
+    <stroke android:width="@dimen/stroke_hairline" android:color="@color/color_error_border" />
+</shape>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/color_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/space_page_h"
+        android:paddingEnd="@dimen/space_page_h"
+        android:paddingTop="@dimen/space_page_top"
+        android:paddingBottom="@dimen/space_page_bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_back"
+                android:textSize="@dimen/text_caption"
+                android:textColor="@color/color_text_secondary"
+                android:drawableStart="@drawable/ic_chevron_left"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/log_title"
+                android:textSize="@dimen/text_title"
+                android:textColor="@color/color_text_primary" />
+
+            <TextView
+                android:id="@+id/refresh_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/log_refresh"
+                android:textSize="@dimen/text_caption"
+                android:textColor="@color/color_accent"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/log_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/log_loading"
+            android:textSize="@dimen/text_meta"
+            android:textColor="@color/color_text_secondary" />
+
+        <LinearLayout
+            android:id="@+id/log_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/load_more_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/log_load_more"
+            android:textSize="@dimen/text_caption"
+            android:textColor="@color/color_text_primary"
+            android:background="@drawable/bg_pill_outline"
+            android:gravity="center"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

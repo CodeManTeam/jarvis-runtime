@@ -1,0 +1,81 @@
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.cache/
+.venv/
+venv/
+
+# Design tooling secrets
+.figma_token
+
+# Agent work orders
+.briefs/
+
+# Runtime data
+data/*
+!data/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+logs/
+*.log
+*.pid
+*.sock
+
+# Build artifacts
+*.zip
+*.apk
+*.aab
+*.aar
+*.class
+*.dex
+*.hprof
+*.out
+*.tmp
+*.bak
+dist/
+build/
+**/build/
+
+# IDE / OS
+*.iml
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Gradle / Android
+.gradle/
+.kotlin/
+local.properties
+.externalNativeBuild/
+.cxx/
+captures/
+*.jks
+*.keystore
+**/.gradle/
+watch-client/.gradle/
+# Verification screenshots (large, regenerated on demand)
+docs/design/NewJarvis/figma/console-shots/
+# Gradle outputs
+watch-client/app/build/
+watch-client/build/
+jarvis-deploy.zip  # packaged deployment artifact
+data/jobs/  # job workspaces
+data/uploads/  # uploaded material
+data/artifacts/  # generated artifacts

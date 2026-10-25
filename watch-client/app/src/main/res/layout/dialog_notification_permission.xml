@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/bg_pill_muted"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_notification_bell"
+            android:contentDescription="@null" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/notif_dialog_title"
+        android:textSize="16sp"
+        android:textColor="@color/color_text_primary" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/notif_dialog_message"
+        android:textSize="@dimen/text_label"
+        android:textColor="@color/color_text_secondary"
+        android:lineSpacingExtra="4dp" />
+
+    <TextView
+        android:id="@+id/notif_dialog_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/notif_dialog_confirm"
+        android:textSize="@dimen/text_label"
+        android:textColor="@color/color_text_on_accent"
+        android:background="@drawable/bg_pill_accent"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/notif_dialog_dismiss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/notif_dialog_dismiss"
+        android:textSize="@dimen/text_label"
+        android:textColor="@color/color_text_secondary"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+</LinearLayout>
